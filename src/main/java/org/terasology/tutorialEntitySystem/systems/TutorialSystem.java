@@ -46,7 +46,7 @@ public class TutorialSystem extends BaseComponentSystem {
 		} else {
 			FloatingTextComponent text = new FloatingTextComponent();
 			text.text = dispComponent.num + "";
-			entity.addOrSaveComponent(dispComponent);
+			entity.addOrSaveComponent(text);
 		}
 	}
 }
