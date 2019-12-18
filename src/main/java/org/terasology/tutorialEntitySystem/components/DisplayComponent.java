@@ -20,5 +20,4 @@ import org.terasology.entitySystem.Component;
 
 public class DisplayComponent implements Component {
 	public int num = 0;
-	public boolean display = false;
 }

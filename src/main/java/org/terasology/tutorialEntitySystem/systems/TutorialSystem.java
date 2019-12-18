@@ -24,6 +24,8 @@ import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.logic.common.ActivateEvent;
 import org.terasology.logic.console.Console;
 import org.terasology.registry.In;
+import org.terasology.rendering.logic.FloatingTextComponent;
+import org.terasology.tutorialEntitySystem.components.DisplayComponent;
 import org.terasology.tutorialEntitySystem.components.SayComponent;
 
 @RegisterSystem(RegisterMode.AUTHORITY)
@@ -33,7 +35,18 @@ public class TutorialSystem extends BaseComponentSystem {
 	private Console console;
 	
 	@ReceiveEvent
-	public void onActivate(ActivateEvent event, EntityRef entity, SayComponent sayComponent) {
+	public void onActivateSay(ActivateEvent event, EntityRef entity, SayComponent sayComponent) {
 		console.addMessage(sayComponent.message); 
+	}
+
+	@ReceiveEvent
+	public void onActivateDisplay(ActivateEvent event, EntityRef entity, DisplayComponent dispComponent) {
+		if(entity.hasComponent(FloatingTextComponent.class)) {
+			entity.removeComponent(FloatingTextComponent.class);
+		} else {
+			FloatingTextComponent text = new FloatingTextComponent();
+			text.text = dispComponent.num + "";
+			entity.addOrSaveComponent(dispComponent);
+		}
 	}
 }
