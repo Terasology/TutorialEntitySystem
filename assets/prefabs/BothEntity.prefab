@@ -6,6 +6,28 @@
 		"mesh": "TutorialEntitySystem:SampleEntity",
 		"material": "TutorialEntitySystem:SampleEntity"
 	},
+	"HullShape": {
+		"sourceMesh" : "TutorialEntitySystem:bounds"
+	},
+	"RigidBody": {
+		"mass": 250,
+		"collisionGroup": "engine:world",
+		"collidesWith": [
+			"engine:world",
+			"engine:debris",
+			"engine:character",
+			"engine:default"
+		]
+	},
+	"Trigger": {
+		"detectGroups": [
+			"engine:world",
+			"engine:debris",
+			"engine:sensor",
+			"engine:kinematic",
+			"engine:default"
+		]
+	},
 	"Say": {
 		"message": "Hello from BothEntity!"
 	},
