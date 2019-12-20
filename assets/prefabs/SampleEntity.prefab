@@ -1,4 +1,7 @@
 {
+	// Parent entity for the others found in this module
+	// The components here provide the model and hitbox
+	// The model is a duplicate of the cargo cart from AdditionalRails
 	"Location": {
 		"scale": 0.32
 	},

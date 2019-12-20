@@ -18,6 +18,13 @@ package org.terasology.tutorialEntitySystem.components;
 
 import org.terasology.entitySystem.Component;
 
+/**
+ * This component displays a number as floating text at the entity's position,
+ * toggling when activated.
+ */
 public class DisplayComponent implements Component {
+	/**
+	 * The number to display
+	 */
 	public int num = 0;
 }

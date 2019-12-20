@@ -1,5 +1,8 @@
 {
+	// Inherit model & hitbox data from parent
 	"parent": "TutorialEntitySystem:SampleEntity",
+	
+	// Contains both SayComponent and DisplayComponent
 	"Say": {
 		"message": "Hello from BothEntity!"
 	},

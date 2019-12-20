@@ -18,6 +18,12 @@ package org.terasology.tutorialEntitySystem.components;
 
 import org.terasology.entitySystem.Component;
 
+/**
+ * This component prints a message to the in-game console when activated.
+ */
 public class SayComponent implements Component {
+	/**
+	 * The message to print
+	 */
 	public String message = "Hello there";
 }

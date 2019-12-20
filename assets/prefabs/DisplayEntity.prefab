@@ -1,5 +1,8 @@
 {
+	// Inherit model & hitbox data from parent
 	"parent": "TutorialEntitySystem:SampleEntity",
+	
+	// Contains only a DisplayComponent
 	"Display": {
 		"num": 5
 	}
