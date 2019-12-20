@@ -1,9 +1,9 @@
 {
-	// Inherit model & hitbox data from parent
-	"parent": "TutorialEntitySystem:SampleEntity",
-	
-	// Contains only a SayComponent
-	"Say": {
-		"message": "Hello from SayEntity!"
-	}
+    // Inherit model & hitbox data from parent
+    "parent": "TutorialEntitySystem:SampleEntity",
+    
+    // Contains only a SayComponent
+    "Say": {
+        "message": "Hello from SayEntity!"
+    }
 }

@@ -35,42 +35,42 @@ import org.terasology.tutorialEntitySystem.components.SayComponent;
 @RegisterSystem(RegisterMode.AUTHORITY)
 public class TutorialSystem extends BaseComponentSystem {
 
-	/**
-	 * Allows access to the in-game console
-	 */	
-	@In
-	private Console console;
-	
-	/**
-	 * Prints a message to the in-game console when an entity with a
-	 * {@link SayComponent} is activated.
-	 *
-	 * @param event The event for the entity being activated (by pressing e)
-	 * @param entity The entity receiving the event
-	 * @param sayComponent The relevant component on the entity
-	 */
-	@ReceiveEvent
-	public void onActivateSay(ActivateEvent event, EntityRef entity, SayComponent sayComponent) {
-		console.addMessage(sayComponent.message); 
-	}
+    /**
+     * Allows access to the in-game console
+     */    
+    @In
+    private Console console;
+    
+    /**
+     * Prints a message to the in-game console when an entity with a
+     * {@link SayComponent} is activated.
+     *
+     * @param event The event for the entity being activated (by pressing e)
+     * @param entity The entity receiving the event
+     * @param sayComponent The relevant component on the entity
+     */
+    @ReceiveEvent
+    public void onActivateSay(ActivateEvent event, EntityRef entity, SayComponent sayComponent) {
+        console.addMessage(sayComponent.message); 
+    }
 
-	/**
-	 * Toggles the floating text display when an entity with a
-	 * {@link DisplayComponent} is activated.
-	 *
-	 * @param event The event for the entity being activated (by pressing e)
-	 * @param entity The entity receiving the event
-	 * @param dispComponent The relevant component on the entity
-	 */
-	@ReceiveEvent
-	public void onActivateDisplay(ActivateEvent event, EntityRef entity, DisplayComponent dispComponent) {
-		if(entity.hasComponent(FloatingTextComponent.class)) {
-			entity.removeComponent(FloatingTextComponent.class);
-		} else {
-			FloatingTextComponent text = new FloatingTextComponent();
-			text.text = dispComponent.num + "";
-			text.isOverlay = true;
-			entity.addOrSaveComponent(text);
-		}
-	}
+    /**
+     * Toggles the floating text display when an entity with a
+     * {@link DisplayComponent} is activated.
+     *
+     * @param event The event for the entity being activated (by pressing e)
+     * @param entity The entity receiving the event
+     * @param dispComponent The relevant component on the entity
+     */
+    @ReceiveEvent
+    public void onActivateDisplay(ActivateEvent event, EntityRef entity, DisplayComponent dispComponent) {
+        if(entity.hasComponent(FloatingTextComponent.class)) {
+            entity.removeComponent(FloatingTextComponent.class);
+        } else {
+            FloatingTextComponent text = new FloatingTextComponent();
+            text.text = dispComponent.num + "";
+            text.isOverlay = true;
+            entity.addOrSaveComponent(text);
+        }
+    }
 }

@@ -23,8 +23,8 @@ import org.terasology.entitySystem.Component;
  * toggling when activated.
  */
 public class DisplayComponent implements Component {
-	/**
-	 * The number to display
-	 */
-	public int num = 0;
+    /**
+     * The number to display
+     */
+    public int num = 0;
 }
