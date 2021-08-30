@@ -16,15 +16,20 @@
 
 package org.terasology.tutorialEntitySystem.components;
 
-import org.terasology.engine.entitySystem.Component;
+import org.terasology.gestalt.entitysystem.component.Component;
 
 /**
  * This component displays a number as floating text at the entity's position,
  * toggling when activated.
  */
-public class DisplayComponent implements Component {
+public class DisplayComponent implements Component<DisplayComponent> {
     /**
      * The number to display
      */
     public int num = 0;
+
+    @Override
+    public void copyFrom(DisplayComponent other) {
+        this.num = other.num;
+    }
 }
