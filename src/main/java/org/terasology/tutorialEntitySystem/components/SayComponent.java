@@ -16,7 +16,7 @@
 
 package org.terasology.tutorialEntitySystem.components;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 /**
  * This component prints a message to the in-game console when activated.

@@ -16,7 +16,7 @@
 
 package org.terasology.tutorialEntitySystem.components;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 /**
  * This component displays a number as floating text at the entity's position,
