@@ -16,14 +16,19 @@
 
 package org.terasology.tutorialEntitySystem.components;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.gestalt.entitysystem.component.Component;
 
 /**
  * This component prints a message to the in-game console when activated.
  */
-public class SayComponent implements Component {
+public class SayComponent implements Component<SayComponent> {
     /**
      * The message to print
      */
     public String message = "Hello there";
+
+    @Override
+    public void copyFrom(SayComponent other) {
+        this.message = other.message;
+    }
 }
